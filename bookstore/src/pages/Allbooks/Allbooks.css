@@ -1,0 +1,11 @@
+.display-all-books {
+    display: flex;
+    padding:0;
+    width: 93%;
+    margin-top: 2%;
+    margin-left: 6%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /* flex-grow: 1 */
+    /* justify-content: space-between; */
+  }

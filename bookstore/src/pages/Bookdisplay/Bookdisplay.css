@@ -1,0 +1,176 @@
+.Book-main-container {
+  display: flex;
+  width: auto;
+  /* border: 1px solid red; */
+  margin-left: 6%;
+  margin-top: 2%;
+}
+.Images {
+  display: flex;
+  width: 100%;
+}
+.Box-Image {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 2%;
+  /* border: 1px solid rgb(17, 255, 0); */
+  padding: 2px;
+}
+.Box-Image1 {
+  border: 1px solid red;
+}
+.Big-Image-container {
+  display: flex;
+  flex-direction: column;
+  width: 20% !important;
+  /* border: 1px solid blue; */
+}
+.img-content {
+  padding: 16px !important;
+}
+.card-container {
+  display: flex !important;
+  align-items: flex-start !important;
+  width: 100%;
+  /* border: 1px solid palevioletred; */
+}
+.button-class {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10%;
+  position: sticky;
+  top: auto;
+}
+.buttons {
+  font-size: 10px !important;
+  height: 30px !important;
+  width: 48%;
+  background-color: #a03037 !important;
+  /* padding-top: 10%; */
+}
+.img-size {
+  width: 100%;
+  height: 320px;
+}
+.button2 {
+  background-color: rgb(59, 59, 59) !important;
+  align-items: center;
+}
+.favButton {
+  font-size: small !important;
+  margin-right: 6% !important;
+}
+.book-details-main {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  /* width: 30%; */
+  width: 71%;
+}
+.book-name-class-display {
+  display: flex;
+  padding: 0;
+  /* padding-top: 4%; */
+  padding-left: 8%;
+  padding-top: 1%;
+  /* font-weight: bold; */
+  font-size: 28px;
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  white-space: nowrap;
+  align-items: center;
+}
+.book-author-class-display {
+  font-size: 20px;
+  color: #878787;
+  font-family: sans-serif;
+  /* padding-top: 2%; */
+}
+.greenBox-display {
+  color: white;
+  background-color: #388e3c;
+  width: 10%;
+  font-size: 75%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
+  font-family: sans-serif;
+  font-size: 66%;
+}
+.ratingCount-display {
+  font-family: sans-serif;
+  color: #878787;
+  margin-left: 1%;
+  font-size: 66%;
+}
+.priceBox1-display {
+  margin-left: 2%;
+  color: #878787;
+  text-decoration: line-through;
+  font-size: 58%;
+}
+.hr-class {
+  margin-left: 8%;
+  width: 91%;
+}
+.bullet {
+  font-size: x-small !important;
+  margin-right: 1%;
+}
+.book-bullet-class-display {
+  font-size: 14px;
+  color: #878787;
+  font-family: sans-serif;
+}
+.text-class {
+  font-size: 14px;
+  color: #484646;
+  font-family: sans-serif;
+  width: auto;
+  white-space: normal;
+  text-align: start;
+}
+.feedback {
+  font-size: 20px;
+  color: black;
+  font-family: sans-serif;
+}
+.bookName {
+  padding-top: 0%;
+}
+.feedback-class {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f5f5f5;
+  padding: 0px;
+  margin-left: 8%;
+  margin-top: 1%;
+  padding: 1% 1%;
+}
+.overall-ratring {
+  font-size: 55%;
+  font-family: auto;
+}
+.btnsAndcount-bookview {
+  display: flex;
+  width: 40%;
+  gap: 10px;
+}
+
+.book-count-bookview {
+  display: inline-block;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  width: 50%;
+}
+
+.quantity-button-bookview {
+  border-radius: 50%;
+  border: 1px solid #dbdbdb;
+  width: 30%;
+}
