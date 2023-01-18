@@ -40,28 +40,27 @@ margin-left: 88%;
   background-color: white;
   /* border: 1px solid black; */
   padding-top: 1%;
-    
-  }
-  
-  .change-display {
-    display: inline-block;
-    /* margin-left: 8%;
+}
+
+.change-display {
+  display: inline-block;
+  /* margin-left: 8%;
     margin-right: 8%; */
-  }
-  
-  .Books {
-    font-size: 1.2em;
-    font-weight: 500;
-  }
-  .book-count {
-    font-size: 0.7rem;
-  }
-  .change-display-left{
-margin-left: 6%;
-  }
-  .change-display-right{
-    margin-right: 6%;
-  }
+}
+
+.Books {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.book-count {
+  font-size: 0.7rem;
+}
+.change-display-left {
+  margin-left: 6%;
+}
+.change-display-right {
+  margin-right: 6%;
+}
 
 /* .AllbookClass{
   margin-top: 6%;
@@ -69,6 +68,8 @@ margin-left: 6%;
     margin-top: 7%;
     margin-left: 6%;
 }      */
-.BookDetail{
+.BookDetail {
+  display: flex;
+  justify-content: space-between;
   margin-top: 1%;
 }

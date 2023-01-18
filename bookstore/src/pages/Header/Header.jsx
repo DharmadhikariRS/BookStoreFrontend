@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import * as React from 'react';
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -24,6 +24,57 @@ import educationlogo from "../../images/logo.png";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Await, useNavigate } from "react-router-dom";
 import { getBooksFromCartAPI } from "../../Service/book.service";
+import { makeStyles } from "@mui/styles";
+
+const useStyle = makeStyles({
+  SearchBox: {
+    position: "absolute",
+    marginLeft: "25%",
+    width: "40%",
+    backgroundColor: "white",
+    borderRadius: "6px",
+  },
+  iconBox1: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "small",
+  },
+  cartLogoDiv: {
+    position: "absolute",
+    display: "flex",
+    justifyContent: "space-between",
+    width: "12%",
+    marginLeft: "82%",
+  },
+  ["@media only screen and (min-width: 320px) and (max-width: 480px)"]: {
+    cartLogoDiv: {
+      marginLeft: "66%",
+    },
+    iconBox1: {
+      fontSize: "x-small",
+      margin: "0px 2%",
+    },
+  },
+  ["@media only screen and (min-width: 481px) and (max-width: 899px)"]: {
+    SearchBox: {
+      marginLeft: "30%",
+    },
+    typoClass: {
+      marginLeft: "12%!important",
+    },
+    iconBox1: {
+      margin: "0px 2%",
+    },
+    cartLogoDiv: {
+      marginLeft: "74%",
+    },
+    IconSpan: {
+      fontSize: "11px",
+    },
+  },
+});
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -31,11 +82,9 @@ const Search = styled("div")(({ theme }) => ({
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  //   marginRight: theme.spacing(2),
-  //   marginLeft: 0,
+
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    // marginLeft: theme.spacing(3),
     width: "auto",
   },
 }));
@@ -66,28 +115,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-function Header() {
+
+function Header({ setShowSearchBook, searchBookName, setSearchBookName }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  // const [cartBooks, setcartBooks] = useState({});
-  // const navigate = useNavigate();
-  // let data;
-  // const getCartBooks = () => {
-  //   getBooksFromCartAPI()
-  //     .then((response) => {
-  //       setcartBooks(response);
-  //       setTimeout(() => {
-  //         navigate("/cart", { state: { cartBooks: cartBooks } });
-  //       }, 2000);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-  // console.log("book from cart in header", cartBooks);
+  const [bookArray, setBookArray] = useState([]);
+  const classes = useStyle();
   const navigate = useNavigate();
   const getCartBooks = () => {
     navigate("/cart");
   };
+  const searchBook = (e) => {
+    setSearchBookName(e.target.value);
+    setShowSearchBook(true);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }} className="BoxOuter">
       <AppBar
@@ -104,11 +145,11 @@ function Header() {
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" }, marginLeft: "10%" }}
-            className="typoClass"
+            className={classes.typoClass}
           >
             Bookstore
           </Typography>
-          <Box className="SearchBox">
+          <Box className={classes.SearchBox}>
             <Search className="SearchBox1">
               <SearchIconWrapper>
                 <SearchIcon />
@@ -117,26 +158,35 @@ function Header() {
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
                 className="SearchBox1"
+                value={searchBookName}
+                onChange={searchBook}
               />
             </Search>
           </Box>
-          <Box className="cartLogoDiv">
-            <div className="iconBox1">
+          <Box className={classes.cartLogoDiv}>
+            <div className={classes.iconBox1}>
               <Person2OutlinedIcon />
-              <span>Profile</span>
-            </div>
-            <div className="iconBox1">
-              <FavoriteIcon />
-              <span>Wishlist</span>
+              <span className={classes.IconSpan}>Profile</span>
             </div>
             <div
-              className="iconBox1"
+              className={classes.iconBox1}
+              onClick={() => {
+                navigate("/wishlist");
+              }}
+            >
+              <FavoriteIcon />
+              <span className={classes.IconSpan}>Wishlist</span>
+            </div>
+            <div
+              className={classes.iconBox1}
               onClick={() => {
                 getCartBooks();
               }}
             >
-              <AddShoppingCartOutlinedIcon />
-              <span>Cart</span>
+              <Badge badgeContent={0} color="primary">
+                <AddShoppingCartOutlinedIcon />
+              </Badge>
+              <span className={classes.IconSpan}>Cart</span>
             </div>
           </Box>
         </Toolbar>

@@ -4,6 +4,8 @@ import Signin from "../signin/Signin";
 import Signup from "../signup/Signup";
 import Dashboard from "../Dashboard/Dashboard";
 import Cart from "../cart/Cart";
+import Wishlist from "../Wishlist/Wishlist";
+import Order from "../Order/Order";
 function Routing() {
   return (
     <div>
@@ -13,6 +15,8 @@ function Routing() {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/wishlist" element={<Wishlist />} />
+          <Route exact path="/order" element={<Order />} />
         </Routes>
       </Router>
     </div>

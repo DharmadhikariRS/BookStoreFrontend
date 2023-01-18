@@ -6,7 +6,9 @@
   flex-direction: column;
   gap: 15px;
 }
-
+.continerCart {
+  height: 100%;
+}
 .first-div {
   display: flex;
   width: 100%;
@@ -25,6 +27,7 @@
 .cart-count {
   display: flex;
   align-items: center;
+  margin-left: 6%;
 }
 
 .select-location {
@@ -50,6 +53,7 @@
 .bookNameClass {
   display: flex;
   justify-content: flex-start;
+  white-space: normal;
 }
 .incart-author {
   text-align: left;
@@ -94,6 +98,7 @@
   border: 1px solid #dbdbdb;
   border-radius: 1px;
   width: 60%;
+  text-align: center;
 }
 .btnsAndcount-cart {
   display: flex;
@@ -149,4 +154,9 @@
 .allCartBooks {
   display: flex;
   flex-direction: column;
+}
+.priceBox1-display-cart {
+  color: #878787;
+  text-decoration: line-through;
+  font-size: 58%;
 }

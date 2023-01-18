@@ -7,17 +7,27 @@ import Bookdisplay from "./pages/Bookdisplay/Bookdisplay";
 import Routing from "./pages/Routing/Routing";
 import Cart from "./pages/cart/Cart";
 import Customerdetails from "./pages/CustomerDetails/Customerdetails";
+import Wishlist from "./pages/Wishlist/Wishlist";
+import OrderSummary from "./pages/OrderSummary/OrderSummary";
+import Order from "./pages/Order/Order";
+import Footer from "./pages/Footer/Footer";
 function App() {
   return (
     <div className="App">
-      {/* <Signin />
+      <div className="appInner">
+        {/* <Signin />
       <Dashboard/>
       <Header/>
       <Books/>
       <Bookdisplay /> */}
-      <Routing />
-      {/* <Cart /> */}
-      {/* <Customerdetails /> */}
+        <Routing />
+        {/* <Cart /> */}
+        {/* <Customerdetails /> */}
+        {/* <Wishlist /> */}
+        {/* <OrderSummary /> */}
+        {/* <Order /> */}
+        {/* <Footer /> */}
+      </div>
     </div>
   );
 }

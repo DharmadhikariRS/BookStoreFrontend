@@ -1,0 +1,13 @@
+.main-container-pagination {
+  margin-top: 5%;
+  margin-left: 6%;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0px 1%;
+}
+.PagNumberClass {
+  width: 50% !important;
+}

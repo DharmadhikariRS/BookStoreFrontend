@@ -1,7 +1,70 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { SignUpAPI } from "../../Service/user.service";
+import { makeStyles } from "@mui/styles";
+import { ClassNames } from "@emotion/react";
 
+const useStyle = makeStyles({
+  loginBox: {
+    position: "absolute",
+    top: "22vh",
+    left: "50vw",
+    width: "28vw",
+    height: "425px",
+    background: "#ffffff 0% 0% no-repeat padding-box",
+    boxShadow: "0px 5px 15px #00000029",
+    border: "1px solid #e4e4e4",
+    borderRadius: "6px",
+    opacity: 1,
+  },
+  loginBtn: {
+    position: "absolute",
+    top: "28px",
+    left: "14%",
+    height: "33px",
+    textAlign: "left",
+    font: "normal normal normal 25px/33px Roboto",
+    border: "0",
+    background: "white",
+    fontWeight: "bold",
+    lineHeight: "33px",
+    letterSpacing: "0px",
+    color: " #0a0102",
+    textTransform: "uppercase",
+    opacity: "1",
+  },
+  signupBtn: {
+    position: "absolute",
+    left: "58%",
+  },
+  ["@media only screen and (min-width:320px) and (max-width:480px)"]: {
+    loginBox: {
+      left: "19vw",
+      width: "65vw",
+    },
+    loginBtn: {
+      fontSize: "93%",
+    },
+    signupBtn: {
+      fontSize: "93%",
+    },
+  },
+  ["@media only screen and (min-width:481px) and (max-width:768px)"]: {
+    loginBox: {
+      left: "19vw",
+      width: "65vw",
+    },
+    loginDivider: {
+      left: "16%",
+    },
+  },
+  ["@media only screen and (min-width:769px) and (max-width:1024px)"]: {
+    loginBox: {
+      width: "40vw",
+      left: "50vw",
+    },
+  },
+});
 const Signup = ({ logIn, signUp }) => {
   const [userDetails, setUserDetails] = useState({
     fullName: "",
@@ -18,7 +81,7 @@ const Signup = ({ logIn, signUp }) => {
   const [passwordmessage, setPasswordmessage] = useState("");
   const [mobileError, setMobileError] = useState(false);
   const [mobilemessage, setMobilemessage] = useState("");
-
+  const classes = useStyle();
   const handleChange = (event) => {
     setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
   };
@@ -77,11 +140,14 @@ const Signup = ({ logIn, signUp }) => {
   };
   return (
     <>
-      <div className="login-box">
-        <button className="login-btn" onClick={logIn}>
+      <div className={classes.loginBox}>
+        <button className={classes.loginBtn} onClick={logIn}>
           Login
         </button>
-        <button className="login-btn signup-btn" onClick={signUp}>
+        <button
+          className={`${classes.loginBtn} ${classes.signupBtn}`}
+          onClick={signUp}
+        >
           Signup
         </button>
         <TextField
@@ -133,7 +199,7 @@ const Signup = ({ logIn, signUp }) => {
           helperText={mobilemessage}
         />
         <button className="main-Signup-btn" onClick={handleCreate}>
-          Signup!!
+          Signup
         </button>
       </div>
     </>
